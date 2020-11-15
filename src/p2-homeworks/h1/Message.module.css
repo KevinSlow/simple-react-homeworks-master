@@ -4,17 +4,19 @@
     border-radius: 12px 12px 12px 0px;
     padding: 14px 15px 10px 15px;
 }
-.avatar>img{
+
+.avatar > img {
     width: 30px;
     height: 33.75px;
     border-radius: 50%;
 }
-.avatar{
+
+.avatar {
     padding-top: 3%;
     padding-right: 1%;
 }
 
-.alterMessage{
+.alterMessage {
     background: #FFFFFF;
     border: 1px solid #ECECEC;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.0220444);
@@ -22,51 +24,65 @@
     padding: 14px 15px 10px 15px;
 
 }
-.message>h1{
+
+.message > h1 {
     font-style: normal;
     font-weight: 500;
     font-size: 12px;
     line-height: 16px;
     color: white;
 }
-.alterMessage>h1{
+
+.message > p {
+    color: snow;
+}
+
+.alterMessage > h1 {
     font-style: normal;
     font-weight: 500;
     font-size: 12px;
     line-height: 16px;
     color: blueviolet;
 }
-.alterMessage>h1,p{
+
+.alterMessage > h1, p {
     margin: 0px;
 }
-.messageBubble{
+
+.messageBubble {
     display: flex;
 }
-.alterTime{
+
+.alterTime {
     display: flex;
     justify-content: flex-end;
     padding-top: 5%;
     padding-right: 5%;
 }
-.alterAvatar{
+
+.alterAvatar {
     padding-top: 12%;
     padding-left: 3%;
 }
-.alterAvatar>img{
+
+.alterAvatar > img {
     width: 30px;
     height: 33.75px;
     border-radius: 50%;
 }
-.alterMessageBubble{
+
+.alterMessageBubble {
     display: flex;
     flex-direction: row-reverse;
     max-width: 30%;
 
 }
-h1,p{
+
+h1, p {
     margin: 0px;
     font-size: 100%;
 }
+
 time {
     font-family: monospace;
 }

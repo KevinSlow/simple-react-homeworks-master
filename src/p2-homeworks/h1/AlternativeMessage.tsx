@@ -9,7 +9,7 @@ type MessagePropsType = {
 }
 
 
-function AlternativeMessage(props:MessagePropsType) {
+function AlternativeMessage(props: MessagePropsType) {
     return (
         <div className={s.alterMessageBubble}>
             <div className={s.alterAvatar}>

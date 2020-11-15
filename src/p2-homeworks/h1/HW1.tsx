@@ -27,12 +27,12 @@ function HW1() {
 
             <hr/>
             {/*для личного творчества, могу проверить*/}
-           <AlternativeMessage
-               avatar={messageData.avatar}
-               name={messageData.name}
-               message={messageData.message}
-               time={messageData.time}
-           />
+            <AlternativeMessage
+                avatar={messageData.avatar}
+                name={messageData.name}
+                message={messageData.message}
+                time={messageData.time}
+            />
             <hr/>
         </div>
     );
