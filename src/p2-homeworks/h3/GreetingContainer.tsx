@@ -29,6 +29,8 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
     const addUser = () => {
         if (name) {
             addUserCallback(name)
+            alert(`Hello ${name}`)
+            setName("")
         } else { // для того чтобы не добавлялось значение в массив
             setError("Input field must not be empty")
         } // need to fix
