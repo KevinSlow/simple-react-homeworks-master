@@ -1,12 +1,24 @@
 .superInput {
+    border: 3px solid green;
+    background: #FFFFFF;
+    box-sizing: border-box;
 
+
+}
+.input{
+    height: 30px;
+    width: 300px;
+    font-family: 'Roboto';
+    border-radius: 5px;
+    outline: none;
 }
 
 .errorInput {
-    border: 3px solid lime;
-    background: red;
+    border: 3px solid red;
 }
 
 .error {
+    font-family: 'Roboto';
     color: red;
 }
+

@@ -1,7 +1,14 @@
 .default {
-
+    background: #4CA5FF;
+    border-radius: 4px;
 }
 
 .red {
+    border-radius: 4px;
+    height: 30px;
+    width: 100px;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    color: #FFFFFF;
     background: red;
 }

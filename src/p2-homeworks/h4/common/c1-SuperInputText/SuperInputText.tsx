@@ -28,7 +28,8 @@ const SuperInputText: React.FC<SuperInputTextPropsType> = (
         onChange // если есть пропс onChange
         && onChange(e); // то передать ему е (поскольку onChange не обязателен)
 
-        onChangeText && onChangeText(e.currentTarget.value);
+        onChangeText
+        && onChangeText(e.currentTarget.value);
     }
     const onKeyPressCallback = (e: KeyboardEvent<HTMLInputElement>) => {
         onKeyPress && onKeyPress(e);
@@ -39,7 +40,7 @@ const SuperInputText: React.FC<SuperInputTextPropsType> = (
     }
 
     const finalSpanClassName = `${s.error} ${spanClassName ? spanClassName : ""}`;
-    const finalInputClassName = `${s.errorInput} ${className}`; // need to fix with (?:) and s.superInput
+    const finalInputClassName = `${restProps.value ? s.superInput : s.errorInput} ${className} ${s.input}`; // need to fix with (?:) and s.superInput
 
     return (
         <>
