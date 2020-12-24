@@ -23,7 +23,6 @@ const SuperEditableSpan: React.FC<SuperEditableSpanType> = (
         onBlur,
         onEnter,
         spanProps,
-
         ...restProps// все остальные пропсы попадут в объект restProps
     }
 ) => {

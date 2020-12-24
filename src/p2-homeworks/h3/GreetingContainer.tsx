@@ -30,13 +30,17 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
         if (name) {
             addUserCallback(name)
             alert(`Hello ${name}`)
-            setName("")
         } else { // для того чтобы не добавлялось значение в массив
             setError("Input field must not be empty")
         }
         setName('')
         // need to fix
     };
+
+
+    const setOnClick = () => {
+        setError("")
+    }
 
     const totalUsers = users.length  // need to fix
 
@@ -46,6 +50,7 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
             setNameCallback={setNameCallback}
             addUser={addUser}
             error={error}
+            setOnClick={setOnClick}
             totalUsers={totalUsers}
         />
     );
