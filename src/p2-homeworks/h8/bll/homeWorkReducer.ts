@@ -1,13 +1,14 @@
-export const homeWorkReducer = (state: any, action: any): any => {
+import {initialStateType, Actions} from "../HW8";
+
+export const homeWorkReducer = (state: Array<initialStateType>, action: Actions): Array<initialStateType> => {
     switch (action.type) {
         case "sort": {
-
-            return state
+            return [...action.payload]
         }
         case "check": {
-
-            return state
+            return [...action.payload]
         }
-        default: return state
+        default:
+            return state
     }
 };
