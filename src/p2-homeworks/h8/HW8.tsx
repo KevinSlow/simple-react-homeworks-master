@@ -8,11 +8,11 @@ export type initialStateType = {
     age: number
 }
 
-type sort = { type: "check"; payload: initialStateType[]; }
+type sortType = { type: "sort"; payload: string; }
 
-type check = { type: "sort"; payload: initialStateType[]; }
+type checkType = { type: "check"; payload:  number; }
 
-export type Actions = sort | check;
+export type Actions = sortType | checkType;
 
 const initialPeople: Array<initialStateType> = [
     {_id: 0, name: "Кот", age: 3},
@@ -34,24 +34,10 @@ function HW8() {
         </div>
     })
 
-    const sortUp = () => setPeople(homeWorkReducer(copyArray, {
-        type: "sort",
-        payload: people.sort(function sortIncrease(a, b) {
-            return a.name <= b.name ? -1 : 1;
-        })
-    }));
+    const sortUp = () => setPeople(homeWorkReducer(initialPeople, {type: "sort", payload: "up"}))
+    const sortDown = () => setPeople(homeWorkReducer(initialPeople, {type: "sort", payload: "down"}))
+    const checkAge = () => setPeople(homeWorkReducer(initialPeople, {type: "check", payload: 18}))
 
-
-    const sortDown = () => setPeople(homeWorkReducer(copyArray, {
-        type: "sort",
-        payload: people.sort(function sortIncrease(a, b) {
-            return a.name >= b.name ? -1 : 1;
-        })
-    }));
-    const check = () => setPeople(homeWorkReducer(copyArray, {
-        type: "check",
-        payload: people.filter(st => st.age >= 18)
-    }))
     return (
         <div>
             <hr/>
@@ -62,7 +48,7 @@ function HW8() {
             {finalPeople}
             <div><SuperButton onClick={sortUp}>sort up</SuperButton></div>
             <div><SuperButton onClick={sortDown}>sort down</SuperButton></div>
-            <div><SuperButton onClick={check}>check 18</SuperButton></div>
+            <div><SuperButton onClick={checkAge}>check 18</SuperButton></div>
             <hr/>
             {/*для личного творчества, могу проверить*/}
             {/*<AlternativePeople/>*/}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {homeWorkReducer} from "../homeWorkReducer";
 
 type initialStateType = {
@@ -8,7 +8,6 @@ type initialStateType = {
 }
 
 let initialState: initialStateType[];
-
 
 beforeEach(() => {
     initialState = [
@@ -22,38 +21,20 @@ beforeEach(() => {
 });
 
 test("sort name up", () => {
-    const copyState = [...initialState]
-    const newState = homeWorkReducer(copyState, {
-        type: "sort",
-        payload: copyState.sort(function sortIncrease(a, b) {
-            if (a.name <= b.name) {
-                return -1
-            } else {
-                return 1
-            }
-        })
-    });
-    console.log(newState);
-    expect(newState.length).toBe(6);
+    const newState = homeWorkReducer(initialState, {type: "sort", payload: "up"})
     expect(newState[0].name).toBe("Александр");
-});
-test("sort name down", () => {
-    const copyState = [...initialState]
-    const newState = homeWorkReducer(copyState, {
-        type: "sort", payload: copyState.sort(function sortIncrease(a, b) {
-            if (a.name >= b.name) {
-                return -1
-            } else {
-                return 1
-            }
-        })
-    });
+    expect(newState[5].name).toBe("Кот");
     expect(newState.length).toBe(6);
-    expect(newState[0].name).toBe("Кот");
 });
+
+test("sort name down", () => {
+    const newState = homeWorkReducer(initialState, {type: "sort", payload: "down"});
+    expect(newState[5].name).toBe("Александр");
+    expect(newState[0].name).toBe("Кот");
+    expect(newState.length).toBe(6);
+});
+
 test("check age 18", () => {
-    const copyState = [...initialState]
-    const newState = homeWorkReducer(copyState, {type: "check", payload: copyState.filter(st => st.age >= 18)});
-    expect(newState[0].age >= 18).toBe(true);
+    const newState = homeWorkReducer(initialState, {type: "check", payload: 18});
     expect(newState.length).toBe(4);
 });

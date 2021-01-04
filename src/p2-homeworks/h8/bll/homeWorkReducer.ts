@@ -1,14 +1,16 @@
 import {initialStateType, Actions} from "../HW8";
 
 export const homeWorkReducer = (state: Array<initialStateType>, action: Actions): Array<initialStateType> => {
-    switch (action.type) {
-        case "sort": {
-            return [...action.payload]
+    const copyArray = [...state];
+    if (action.type === "sort") {{
+            return copyArray.sort(function sortIncrease(a, b) {
+                return action.payload === "up" ? a.name <= b.name ? -1 : 1 : a.name >= b.name ? -1 : 1;})
         }
-        case "check": {
-            return [...action.payload]
+    } else if (action.type === "check") {
+        {
+            return state.filter(st => st.age >= action.payload)
         }
-        default:
-            return state
+    } else {
+        return state
     }
 };
