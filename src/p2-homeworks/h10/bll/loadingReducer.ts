@@ -1,14 +1,34 @@
-const initState = {
+export type initStateType = {
+    loading: boolean
+}
 
+const initState = {
+    loading: false
 };
 
-export const loadingReducer = (state = initState, action: any): any => { // fix any
+const SET_CRUTILKA = "SET_CRUTILKA"
+
+type loadingReducerTypeAction = {
+    type: typeof SET_CRUTILKA,
+    loading: boolean
+}
+
+export const loadingReducer = (state: initStateType = initState, action: loadingReducerTypeAction): initStateType => { // fix any
     switch (action.type) {
-        case "": {
-            return state;
+        case SET_CRUTILKA: {
+            return {...state, loading: action.loading};
         }
-        default: return state;
+
+        default:
+            return state;
     }
 };
+type loadingACType = {
+    type: typeof SET_CRUTILKA,
+    loading: boolean
+}
 
-export const loadingAC = (): any => {}; // fix any
+export const loadingAC = (loading: boolean):loadingACType => ({
+    type: SET_CRUTILKA,
+    loading,
+});
