@@ -32,7 +32,7 @@ export const filterAffairs = (affairs: Array<AffairType>, filter: FilterType): A
         return  affairs.filter(task => task.priority === "middle");
     }else return affairs; // need to fix
 }
-export const deleteAffair = (affairs: Array<AffairType>, _id: number): any => { // need to fix any
+export const deleteAffair = (affairs: Array<AffairType>, _id: number): Array<AffairType> => { // need to fix any
     return affairs.filter(a => a._id !== _id)  // need to fix
 }
 
