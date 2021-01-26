@@ -1,12 +1,14 @@
 import { COLORS } from '../actions/colors'
+import { ActionsType } from '../../types/types';
 
 const INITIAL_STATE = {
-    themeColor: null
+    themeColor: ""
 }
 
 const {BLUE, BLACK, GREEN} = COLORS;
 
-export const colorReducer = (state = INITIAL_STATE, action:any) => {
+
+export const colorReducer = (state = INITIAL_STATE, action:ActionsType) => {
     switch(action.type) {
         case BLUE:
             return {...state, themeColor: BLUE }

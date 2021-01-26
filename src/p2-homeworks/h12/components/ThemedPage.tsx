@@ -2,11 +2,20 @@ import React from "react";
 import {connect} from "react-redux";
 import cx from "classnames";
 
-import {chooseBlack, chooseBlue, chooseGreen} from "../bll/actions";
+import { actions} from "../bll/actions";
 import {COLORS} from "../bll/actions/colors";
 import "./styles/themedPage.css";
+import { StateType } from "../types/types";
 
-function ThemedPage(props: any) {
+type ThemedPageType = {
+    chooseBlack: () => void
+    chooseBlue: () => void
+    chooseGreen: () => void
+    themeColor: string
+    children: React.ReactElement
+}
+
+function ThemedPage(props: ThemedPageType) {
     function changeToBlack() {
         props.chooseBlack();
     }
@@ -58,11 +67,11 @@ function ThemedPage(props: any) {
     );
 }
 
-const mapStateToProps = (state: any) => {
+const mapStateToProps = (state: StateType) => {
     return {themeColor: state.colors.themeColor};
 };
 
 export default connect(
     mapStateToProps,
-    {chooseBlack, chooseBlue, chooseGreen}
+    {...actions}
 )(ThemedPage);
