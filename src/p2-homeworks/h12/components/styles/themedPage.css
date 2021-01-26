@@ -1,0 +1,54 @@
+div {
+
+}
+nav ul {
+    display: flex;
+}
+nav ul li {
+    list-style: none;
+}
+header {
+    display: flex;
+    justify-content: space-around;
+    height: 100px;
+    background: #fff;
+    padding-bottom: 30px;
+}
+article {
+    text-align: center;
+}
+button {
+    border: 1px solid #fff;
+    cursor: pointer;
+    outline: none;
+    width: 100px;
+    max-width: 100px;
+}
+button:focus {
+    outline: 0;
+}
+.theme-black {
+    background-color: #333;
+    color: #fff;
+}
+.theme-black button {
+    background-color: #333;
+    color: #fff;
+}
+.theme-blue {
+    background-color: #00f;
+    color: #fff;
+}
+.theme-blue button {
+    background-color: #00f;
+    color: #fff;
+}
+.theme-green {
+    background-color: #4caf50;
+    color: #000;
+}
+.theme-green button {
+    background-color: #4caf50;
+    color: #000;
+    outline: none;
+}
